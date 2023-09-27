@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS-Task-2</title>
+</head>
+<body>
+  <h1>Sort String Alphabetically</h1>
+  
+  <form id="stringForm">
+    <label for="originalString">Enter a string:</label>
+    <input type="text" id="originalString" name="originalString" required>
+    <input type="submit" value="Sort">
+  </form>
+
+  <p>Sorted String: <span id="sortedString"></span></p>
+
+  <script>
+    function sortStringAlphabetically(inputString) {
+      return inputString.split('').sort().join('');
+    }
+
+    const stringForm = document.getElementById('stringForm');
+    const originalStringInput = document.getElementById('originalString');
+    const sortedStringOutput = document.getElementById('sortedString');
+
+    stringForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const originalString = originalStringInput.value;
+      const sortedString = sortStringAlphabetically(originalString);
+      sortedStringOutput.textContent = sortedString;
+    });
+  </script>
+</body>
+</html>
